@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Link</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input { width: 80%; padding: 10px; margin-bottom: 10px; }
+        button { padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Copy the Link</h2>
+    <input type="text" id="linkInput" value="https://example.com" readonly>
+    <button onclick="copyLink()">Copy</button>
+    <p id="message"></p>
+
+    <script>
+        function copyLink() {
+            var copyText = document.getElementById("linkInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            document.getElementById("message").innerText = "Link copied!";
+        }
+    </script>
+</body>
+</html>
